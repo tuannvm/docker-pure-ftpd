@@ -1,10 +1,7 @@
 FROM ubuntu:latest
 MAINTAINER tuannvm@mail.ru
 RUN apt-get update && \
-apt-get install pure-ftpd openssl -y
-RUN apt-get install dpkg-dev -y
-RUN apt-get install libpam-dev libcap2-dev libldap2-dev libmysqlclient-dev libmysqlclient15-dev libpq-dev libssl-dev po-debconf -y
-RUN apt-get install debhelper -y
+apt-get install pure-ftpd openssl libpam-dev libcap2-dev libldap2-dev libmysqlclient-dev libmysqlclient15-dev libpq-dev libssl-dev po-debconf dpkg-dev debhelper -y
 RUN mkdir /tmp/pure-ftpd/ && \
 	cd /tmp/pure-ftpd/ && \
 	apt-get source pure-ftpd && \
